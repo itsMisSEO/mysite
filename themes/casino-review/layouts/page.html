@@ -3,7 +3,7 @@
 {{ with where hugo.Data.casinos "slug" .Params.casino }}{{ $c = index . 0 }}{{ end }}
 <section class="hero hero-sm">
   <div class="container">
-    <a class="back" href="{{ "/reviews/" | relURL }}">← All reviews</a>
+    <a class="back" href="{{ "reviews/" | relURL }}">← All reviews</a>
     <div class="review-head">
       {{ with $c }}<div class="casino-logo casino-logo-lg" style="--logo: {{ .color | safeCSS }}">{{ .short }}</div>{{ end }}
       <div>

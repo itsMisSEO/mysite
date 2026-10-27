@@ -2,7 +2,7 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
-      <a class="logo" href="{{ "/" | relURL }}"><span class="logo-mark">{{ substr site.Title 0 1 }}</span>{{ site.Title }}</a>
+      <a class="logo" href="{{ site.Home.RelPermalink }}"><span class="logo-mark">{{ substr site.Title 0 1 }}</span>{{ site.Title }}</a>
       <p class="muted">{{ $f.about }}</p>
       <div class="socials">
         {{ with $f.telegram }}<a href="{{ . }}" aria-label="Telegram">Telegram</a>{{ end }}
@@ -11,19 +11,19 @@
     </div>
     <div>
       <h4>Top casinos</h4>
-      {{ range first 5 hugo.Data.casinos }}<a href="{{ printf "/reviews/%s/" .slug | relURL }}">{{ .name }}</a>{{ end }}
+      {{ range first 5 hugo.Data.casinos }}<a href="{{ printf "reviews/%s/" .slug | relURL }}">{{ .name }}</a>{{ end }}
     </div>
     <div>
       <h4>Guides</h4>
-      <a href="{{ "/#how-we-rate" | relURL }}">How we rate</a>
-      <a href="{{ "/#bonuses" | relURL }}">Bonuses</a>
-      <a href="{{ "/#compare" | relURL }}">Payments</a>
-      <a href="{{ "/#faq" | relURL }}">Play safe</a>
+      <a href="{{ "#how-we-rate" | relURL }}">How we rate</a>
+      <a href="{{ "#bonuses" | relURL }}">Bonuses</a>
+      <a href="{{ "#compare" | relURL }}">Payments</a>
+      <a href="{{ "#faq" | relURL }}">Play safe</a>
     </div>
     <div>
       <h4>Account</h4>
-      <a href="{{ "/#signup" | relURL }}">Sign up</a>
-      <a href="{{ "/#signup" | relURL }}">Log in</a>
+      <a href="{{ "#signup" | relURL }}">Sign up</a>
+      <a href="{{ "#signup" | relURL }}">Log in</a>
     </div>
   </div>
   <div class="container legal">

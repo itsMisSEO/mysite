@@ -16,6 +16,6 @@
     <span class="bonus-label">Welcome bonus</span>
     <strong>{{ $c.bonus }}</strong>
     <a class="btn btn-primary btn-block" href="{{ $c.url }}" target="_blank" rel="nofollow sponsored noopener">Play now</a>
-    <a class="review-link" href="{{ printf "/reviews/%s/" $c.slug | relURL }}">{{ $c.name }} review</a>
+    <a class="review-link" href="{{ printf "reviews/%s/" $c.slug | relURL }}">{{ $c.name }} review</a>
   </div>
 </article>

@@ -1,13 +1,13 @@
 <header class="site-header">
   <div class="container header-inner">
-    <a class="logo" href="{{ "/" | relURL }}"><span class="logo-mark">{{ substr site.Title 0 1 }}</span>{{ site.Title }}</a>
+    <a class="logo" href="{{ site.Home.RelPermalink }}"><span class="logo-mark">{{ substr site.Title 0 1 }}</span>{{ site.Title }}</a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
     <label for="nav-toggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
     <nav class="main-nav">
       {{ range site.Menus.main }}<a href="{{ .URL | relURL }}">{{ .Name }}</a>{{ end }}
       <div class="header-actions">
-        <a class="btn btn-ghost btn-sm" href="{{ "/#signup" | relURL }}">Log in</a>
-        <a class="btn btn-primary btn-sm" href="{{ "/#signup" | relURL }}">Sign up</a>
+        <a class="btn btn-ghost btn-sm" href="{{ "#signup" | relURL }}">Log in</a>
+        <a class="btn btn-primary btn-sm" href="{{ "#signup" | relURL }}">Sign up</a>
       </div>
     </nav>
   </div>
