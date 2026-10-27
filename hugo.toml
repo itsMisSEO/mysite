@@ -1,0 +1,54 @@
+# ========== ОСНОВНЫЕ НАСТРОЙКИ САЙТА ==========
+baseURL = 'https://example.org/'
+locale = 'en-US'
+title = 'Bangladesz'
+theme = 'casino-review'
+disableKinds = ['taxonomy', 'term']
+
+[params]
+  tagline = 'Independent online casino reviews for players in Bangladesh.'
+  updated = '2026-10-27'
+
+  # Полоска с акцией над шапкой (чтобы убрать — удали этот блок)
+  [params.promo]
+    label = 'Casino offer of the week'
+    text = '150% up to ৳15,000 + 100 free spins at Kestrel Casino'
+    button = 'Claim bonus'
+    url = '#top-casinos'
+
+  # Автор обзоров
+  [params.editor]
+    name = 'Editor Name'
+    role = 'Senior casino reviewer'
+    initials = 'EN'
+    bio = 'Tests every casino with a real-money account: deposits via bKash and Nagad, plays the games, contacts support and requests a withdrawal before writing a review.'
+
+  # Текст внизу сайта
+  [params.footer]
+    about = 'Bangladesz is an independent review site. We test online casinos so you can choose with confidence.'
+    disclaimer = '18+ only. Gambling involves risk of losing money — play responsibly and only with money you can afford to lose. Some links on this site are affiliate links: we may earn a commission at no cost to you. Casino names, ratings and bonuses shown are placeholder samples.'
+    telegram = '#'
+    facebook = '#'
+
+# Пункты меню в шапке
+[menus]
+  [[menus.main]]
+    name = 'Top Casinos'
+    url = '/#top-casinos'
+    weight = 1
+  [[menus.main]]
+    name = 'Casino Reviews'
+    url = '/reviews/'
+    weight = 2
+  [[menus.main]]
+    name = 'Bonuses'
+    url = '/#bonuses'
+    weight = 3
+  [[menus.main]]
+    name = 'Payments'
+    url = '/#compare'
+    weight = 4
+  [[menus.main]]
+    name = 'Play Safe'
+    url = '/#faq'
+    weight = 5

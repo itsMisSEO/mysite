@@ -1,0 +1,16 @@
+<div class="cookie" id="cookie" hidden>
+  <p>We use cookies to improve your experience and measure traffic.</p>
+  <button class="btn btn-primary btn-sm" id="cookie-ok" type="button">Accept</button>
+</div>
+<script>
+(function () {
+  var box = document.getElementById('cookie');
+  var seen = false;
+  try { seen = localStorage.getItem('cookie-ok') === '1'; } catch (e) {}
+  if (!seen) box.hidden = false;
+  document.getElementById('cookie-ok').addEventListener('click', function () {
+    box.hidden = true;
+    try { localStorage.setItem('cookie-ok', '1'); } catch (e) {}
+  });
+})();
+</script>

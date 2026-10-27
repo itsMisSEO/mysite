@@ -1,0 +1,34 @@
+{{ $f := site.Params.footer }}
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="logo" href="{{ "/" | relURL }}"><span class="logo-mark">{{ substr site.Title 0 1 }}</span>{{ site.Title }}</a>
+      <p class="muted">{{ $f.about }}</p>
+      <div class="socials">
+        {{ with $f.telegram }}<a href="{{ . }}" aria-label="Telegram">Telegram</a>{{ end }}
+        {{ with $f.facebook }}<a href="{{ . }}" aria-label="Facebook">Facebook</a>{{ end }}
+      </div>
+    </div>
+    <div>
+      <h4>Top casinos</h4>
+      {{ range first 5 hugo.Data.casinos }}<a href="{{ printf "/reviews/%s/" .slug | relURL }}">{{ .name }}</a>{{ end }}
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <a href="{{ "/#how-we-rate" | relURL }}">How we rate</a>
+      <a href="{{ "/#bonuses" | relURL }}">Bonuses</a>
+      <a href="{{ "/#compare" | relURL }}">Payments</a>
+      <a href="{{ "/#faq" | relURL }}">Play safe</a>
+    </div>
+    <div>
+      <h4>Account</h4>
+      <a href="{{ "/#signup" | relURL }}">Sign up</a>
+      <a href="{{ "/#signup" | relURL }}">Log in</a>
+    </div>
+  </div>
+  <div class="container legal">
+    <span class="age age-lg">18+</span>
+    <p>{{ $f.disclaimer }}</p>
+    <p class="muted">© {{ now.Year }} {{ site.Title }}</p>
+  </div>
+</footer>

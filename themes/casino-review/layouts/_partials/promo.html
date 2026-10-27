@@ -1,0 +1,10 @@
+{{ with site.Params.promo }}
+<div class="promo">
+  <div class="container promo-inner">
+    <span class="promo-label">{{ .label }}</span>
+    <span class="promo-text">{{ .text }}</span>
+    <a class="btn btn-gold btn-sm" href="{{ .url }}">{{ .button }}</a>
+    <span class="age">18+</span>
+  </div>
+</div>
+{{ end }}

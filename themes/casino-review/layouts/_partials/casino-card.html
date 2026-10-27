@@ -1,0 +1,21 @@
+{{ $c := .c }}
+<article class="casino-card{{ if eq .rank 1 }} is-top{{ end }}">
+  <span class="rank">#{{ .rank }}</span>
+  <div class="casino-logo" style="--logo: {{ $c.color | safeCSS }}">{{ $c.short }}</div>
+  <div class="casino-main">
+    <div class="casino-head">
+      <h3>{{ $c.name }}</h3>
+      {{ with $c.label }}<span class="tag">{{ . }}</span>{{ end }}
+    </div>
+    <div class="rating"><span class="stars" style="--r: {{ $c.rating }}"></span><b>{{ $c.rating }}</b>/10</div>
+    <ul class="pros">
+      {{ range $c.pros }}<li>{{ . }}</li>{{ end }}
+    </ul>
+  </div>
+  <div class="casino-bonus">
+    <span class="bonus-label">Welcome bonus</span>
+    <strong>{{ $c.bonus }}</strong>
+    <a class="btn btn-primary btn-block" href="{{ $c.url }}" target="_blank" rel="nofollow sponsored noopener">Play now</a>
+    <a class="review-link" href="{{ printf "/reviews/%s/" $c.slug | relURL }}">{{ $c.name }} review</a>
+  </div>
+</article>

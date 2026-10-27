@@ -1,0 +1,36 @@
+{{ define "main" }}
+{{ $c := false }}
+{{ with where hugo.Data.casinos "slug" .Params.casino }}{{ $c = index . 0 }}{{ end }}
+<section class="hero hero-sm">
+  <div class="container">
+    <a class="back" href="{{ "/reviews/" | relURL }}">← All reviews</a>
+    <div class="review-head">
+      {{ with $c }}<div class="casino-logo casino-logo-lg" style="--logo: {{ .color | safeCSS }}">{{ .short }}</div>{{ end }}
+      <div>
+        <h1>{{ .Title }}</h1>
+        {{ with $c }}
+        <div class="rating"><span class="stars" style="--r: {{ .rating }}"></span><b>{{ .rating }}</b>/10 {{ with .label }}<span class="tag">{{ . }}</span>{{ end }}</div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container review-layout">
+    <article class="prose">{{ .Content }}</article>
+    {{ with $c }}
+    <aside class="review-aside">
+      <span class="bonus-label">Welcome bonus</span>
+      <strong class="bonus-big">{{ .bonus }}</strong>
+      <dl class="facts">
+        <dt>Wagering</dt><dd>{{ .wagering }}</dd>
+        <dt>Payout time</dt><dd>{{ .payout }}</dd>
+        <dt>Min. deposit</dt><dd>{{ .min_deposit }}</dd>
+      </dl>
+      <a class="btn btn-primary btn-block" href="{{ .url }}" target="_blank" rel="nofollow sponsored noopener">Go to {{ .name }}</a>
+      <p class="tiny muted">18+ · Terms apply · Play responsibly</p>
+    </aside>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

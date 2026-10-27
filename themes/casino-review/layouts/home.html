@@ -1,0 +1,117 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Updated {{ site.Params.updated | time.Format "2 January 2006" }}</span>
+    <h1>{{ .Title }}</h1>
+    <div class="hero-text">{{ .Content }}</div>
+    {{ with site.Params.editor }}
+    <div class="byline">
+      <span class="avatar">{{ .initials }}</span>
+      <span>Reviewed by <b>{{ .name }}</b>, {{ .role }}</span>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<section id="top-casinos" class="section">
+  <div class="container">
+    <h2>Top Casinos</h2>
+    <div class="casino-list">
+      {{ range $i, $c := hugo.Data.casinos }}
+        {{ partial "casino-card.html" (dict "c" $c "rank" (add $i 1)) }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section id="compare" class="section section-alt">
+  <div class="container">
+    <h2>Quick Comparison</h2>
+    <div class="table-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th>Casino</th><th>Rating</th><th>Wagering</th><th>Payout time</th><th>Min. deposit</th><th></th></tr>
+        </thead>
+        <tbody>
+          {{ range hugo.Data.casinos }}
+          <tr>
+            <td><a href="{{ printf "/reviews/%s/" .slug | relURL }}">{{ .name }}</a></td>
+            <td><span class="score">{{ .rating }}</span></td>
+            <td>{{ .wagering }}</td>
+            <td>{{ .payout }}</td>
+            <td>{{ .min_deposit }}</td>
+            <td><a class="btn btn-primary btn-sm" href="{{ .url }}" target="_blank" rel="nofollow sponsored noopener">Play</a></td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="how-we-rate" class="section">
+  <div class="container">
+    <h2>How We Rate Casinos</h2>
+    <div class="grid-3">
+      {{ range $i, $c := hugo.Data.criteria }}
+      <div class="criterion">
+        <span class="criterion-num">{{ add $i 1 }}</span>
+        <h3>{{ $c.title }}</h3>
+        <p>{{ $c.text }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section id="bonuses" class="section section-alt">
+  <div class="container">
+    <h2>Top Bonuses</h2>
+    <div class="grid-4">
+      {{ range hugo.Data.bonuses }}
+      <a class="bonus-tile" href="{{ .url }}" target="_blank" rel="nofollow sponsored noopener">
+        <span class="tag">{{ .badge }}</span>
+        <strong>{{ .value }}</strong>
+        <span class="muted">{{ .note }}</span>
+        <span class="bonus-casino">{{ .casino }} →</span>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section">
+  <div class="container narrow">
+    <h2>FAQ</h2>
+    {{ range hugo.Data.faq }}
+    <details class="faq">
+      <summary>{{ .q }}</summary>
+      <p>{{ .a }}</p>
+    </details>
+    {{ end }}
+
+    {{ with site.Params.editor }}
+    <div class="editor-card">
+      <span class="avatar avatar-lg">{{ .initials }}</span>
+      <div>
+        <b>{{ .name }}</b>
+        <span class="muted">{{ .role }}</span>
+        <p>{{ .bio }}</p>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<section id="signup" class="section">
+  <div class="container">
+    <div class="cta-box">
+      <div>
+        <h2>Get exclusive bonuses first</h2>
+        <p>Create a free account to save your favourite casinos and get new offers before anyone else.</p>
+      </div>
+      <a class="btn btn-primary btn-lg" href="#signup">Create free account</a>
+    </div>
+  </div>
+</section>
+{{ end }}

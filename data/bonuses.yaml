@@ -1,0 +1,20 @@
+- casino: Kestrel Casino
+  badge: Welcome
+  value: 150% up to ৳15,000
+  note: + 100 free spins
+  url: "#"
+- casino: Lotusplay
+  badge: Reload
+  value: 50% every Friday
+  note: up to ৳5,000
+  url: "#"
+- casino: Riverline Casino
+  badge: Cashback
+  value: 10% weekly
+  note: no wagering
+  url: "#"
+- casino: Tigerpeak
+  badge: Free spins
+  value: 50 free spins
+  note: on first deposit
+  url: "#"

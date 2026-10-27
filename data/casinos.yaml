@@ -1,0 +1,77 @@
+# Список казино. Порядок здесь = порядок на сайте (#1, #2, ...).
+# Чтобы добавить казино — скопируй блок от "- slug:" до следующего и поменяй значения.
+- slug: kestrel-casino
+  name: Kestrel Casino
+  short: KE
+  color: "#e11d48"
+  rating: 9.1
+  label: Editor's pick
+  pros:
+    - Fast bKash and Nagad withdrawals
+    - 3,000+ slots and live tables
+    - Bangla live chat 24/7
+  bonus: 150% up to ৳15,000 + 100 free spins
+  wagering: x30
+  payout: 0–1 h
+  min_deposit: ৳300
+  url: "#"
+- slug: lotusplay
+  name: Lotusplay
+  short: LO
+  color: "#7c3aed"
+  rating: 8.8
+  label: Best app
+  pros:
+    - Excellent Android and iOS apps
+    - Teen Patti and Andar Bahar tables
+    - Daily reload bonuses
+  bonus: 100% up to ৳10,000
+  wagering: x25
+  payout: 1–6 h
+  min_deposit: ৳500
+  url: "#"
+- slug: riverline-casino
+  name: Riverline Casino
+  short: RI
+  color: "#0284c7"
+  rating: 8.5
+  label: Low wagering
+  pros:
+    - Only x10 wagering on bonuses
+    - Weekly 10% cashback
+    - Clear, fair bonus terms
+  bonus: 10% weekly cashback
+  wagering: x10
+  payout: 2–12 h
+  min_deposit: ৳500
+  url: "#"
+- slug: tigerpeak
+  name: Tigerpeak
+  short: TI
+  color: "#ea580c"
+  rating: 8.1
+  label: Jackpots
+  pros:
+    - Large progressive jackpot slots
+    - Regular tournaments
+    - Low minimum deposit
+  bonus: 120% up to ৳12,000
+  wagering: x35
+  payout: 6–24 h
+  min_deposit: ৳200
+  url: "#"
+- slug: sundarwin
+  name: Sundarwin
+  short: SU
+  color: "#059669"
+  rating: 7.7
+  label: New
+  pros:
+    - Simple, beginner-friendly lobby
+    - Free demo mode for most games
+    - Friendly support
+  bonus: 100% up to ৳8,000
+  wagering: x30
+  payout: 12–48 h
+  min_deposit: ৳1,000
+  url: "#"
